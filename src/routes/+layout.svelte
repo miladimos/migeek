@@ -3,16 +3,21 @@
 
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-
+	import Transition from './transition.svelte'
 
 	import './styles.css';
+
+	export let data;
 </script>
 
 <div class="app">
 	<Header />
 
 	<main>
-		<slot />
+		<Transition url={data.url}>
+			<slot />
+		</Transition>
+			
 	</main>
 
 	<Footer></Footer>

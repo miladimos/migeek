@@ -1,5 +1,6 @@
 <script>
 	import * as config from '$lib/config/config';
+	export let data;
 </script>
 
 <svelte:head>
@@ -9,8 +10,18 @@
 
 <section>
 	<h1 class="">
-		to your new<br />SvelteKit app
+		Migeek		
 	</h1>
+</section>
+
+<section>
+	<ul>
+		{#each data.posts as post}
+		<li>
+			<a href="{post.slug}">{post.title}</a>
+		</li>
+		{/each}
+	</ul>
 </section>
 
 <style>
