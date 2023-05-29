@@ -2,12 +2,13 @@
 	import { page } from '$app/stores';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import * as config from '$lib/config/config';
 </script>
 
 <header>
 	<div class="corner">
 		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+			<img src={logo} alt={config.title} />
 		</a>
 	</div>
 
@@ -19,11 +20,14 @@
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
+			<li aria-current={$page.url.pathname === '/posts' ? 'page' : undefined}>
+				<a href="/posts">Posts</a>
+			</li>			
+			<li aria-current={$page.url.pathname === '/rss' ? 'page' : undefined}>
+				<a href="/rss">RSS</a>
+			</li>
 			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
 				<a href="/about">About</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -32,7 +36,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
+		<a href="https://github.com/miladimos/migeek">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
